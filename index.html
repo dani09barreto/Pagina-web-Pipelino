@@ -10,55 +10,85 @@
 </head>
 <body>
     <header>
-        <nav class="navegacion">
-            <div class="nav">
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i> 
-                </div>   
-                <a href="#" class="nav_logo"><img src="img/logoescrito.png" alt=""></a>
-                <div class="nav_menu">
-                    <ul class="nav_list">
-                        <li class="navitem"><a href="#inicio" class="nav_link">Inicio</a></li>
-                        <li class="navitem"><a href="#destacados" class="nav_link">Destacados</a></li>
-                        <li class="navitem"><a href="#productos" class="nav_link">Productos</a></li>
-                        <li class="navitem"><a href="#mas" class="nav_link">mas</a></li>
-                    </ul>
+        <nav>
+            <div class="nav">      
+                <div class="logo">
+                    <a href="#" class="nav_logo"><img src="img/logoescrito.png" alt="logo" height="66px"></a>
                 </div>
+                <label for="btn" class="icon">
+                    <span class="fas fa-ellipsis-v"></span>
+                </label>
+                <input type="checkbox" id="btn">
+                <ul class="nav-menu">
+                    <li class="Inicio"><a href="#"><strong>INCIO</strong></a></li>
+                    <li class="productos">
+                        <label for="btn-1" class="show"><strong>PRODUCTOS +</strong></label>
+                        <a href="#" class="view"><strong>PRODUCTOS</strong></a>
+                        <input type="checkbox" id="btn-1">
+                        <ul>
+                            <li class="sub-menu"><a href="#"><strong>PAL FRIO</strong></a></li>
+                            <li class="sub-menu"><a href="#"><strong>PAL DEPORTE</strong></a></li>
+                            <li class="sub-menu"><a href="#"><strong>PAL ESTUDIO</strong></a></li>
+                        </ul>
+                    </li>
+                    <li class="mas">
+                        <label for="btn-2" class="show"><strong>MAS +</strong></label>
+                        <a href="#" class="view"><strong>MAS</strong>
+                            <span class="fa fa-plus"></span>
+                        </a>
+                        <input type="checkbox" id="btn-2">
+                        <ul>
+                            <li class="sub-menu"><a href="#"><strong>CONTACTANOS</strong></a></li>
+                            <li class="sub-menu"><a href="#"><strong>REDES SOCIALES</strong></a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </nav>
-    </header>
-    <main>
         <div class="contenedor">
-
-            <div class="slider-contenedor">
-
-                <section class="contenido-slider">
-                    <div>
-                        <h2>asdfksdnfksdnfksdnf</h2>
-                        <a href="#">Ver más</a>
+            <section class="home">
+                <div class="slider">
+                    <div class="slide active" style="background-image: url('img/road220058.jpg');">
+                        <div class="container">
+                            <div class="text">
+                                <h1>PAL FRIO</h1>
+                                <p>jasndasdasndkasdasd</p>
+                                <a href=""><strong>VER MÁS</strong></a>
+                            </div>
+                        </div>
                     </div>
-                    <img src="img/WhatsApp Image 2021-04-04 at 11.58.58 AM.jpeg" alt="">
-                    
-                </section>
-
-                <section class="contenido-slider">
-                    <div>
-                        <h2>asdfksdnfksdnfksdnf</h2>
-                        <a href="#">Ver más</a>
+                    <div class="slide" style="background-image: url('img/tuscany428041.jpg');">
+                        <div class="container">
+                            <div class="text">
+                                <h1>PAL ESTUDIO</h1>
+                                <p>jasndasdasndkasdasd</p>
+                                <a href=""><strong>VER MÁS</strong></a>
+                            </div>
+                        </div>
                     </div>
-                    <img src="img/WhatsApp Image 2021-04-04 at 11.58.58 AM.jpeg" alt="">
-                </section>
-
-                <section class="contenido-slider">
-                    <div>
-                        <h2>asdfksdnfksdnfksdnf</h2>
-                        <a href="#">Ver más</a>
+                    <div class="slide" style="background-image: url('img/picjumbo.com_hnck0391.jpg');">
+                        <div class="container">
+                            <div class="text">
+                                <h1>PAL DEPORTE</h1>
+                                <p>jasndasdasndkasdasd</p>
+                                <a href=""><strong>VER MÁS</strong></a>
+                            </div>
+                        </div>
                     </div>
-                    <img src="img/WhatsApp Image 2021-04-04 at 11.58.58 AM.jpeg" alt="">
-                </section>
-            </div>
+                </div>
+                <div class="controls">
+                    <div class="prev"><</div>
+                    <div class="next">></div>
+                </div>
+                <div class="indicator">
+    
+                </div>
+            </section>
         </div>
-    </main>
+
+    </header>
+    
+    
     <script src="https://kit.fontawesome.com/397c23d5bf.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>

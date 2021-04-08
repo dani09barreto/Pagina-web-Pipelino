@@ -3,99 +3,365 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* header */
-header::before{
-    content: "";
-    display: block;
-    margin-bottom: 80px;
-}
-nav{
+body{
+    font-family: sans-serif;
     background-color: white;
-    width: 100%;
-    height: 80px;
-    border-bottom: 1px solid transparent;
-    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
-    position: fixed;
-    top: 0;
-    z-index: 100;
+}
+
+/* ----header---- */
+/* ----nav------- */
+nav{
+    background-color: violet;
+    z-index: 2;
 }
 .nav{
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    width: 100%;
-    align-items: center;
-}
-.nav_menu{
-    margin-right: 30px;
-}
-.nav_menu ul li{
-    margin-right: 30px;
-    display: inline-block;
-    vertical-align: middle;
-}
-.nav_menu ul li a{
-    text-decoration: none;
-    color: grey;
-}
-.nav_menu ul li a:hover{
-    color: hotpink;
-}
-.nav .nav_logo{
-    height: 80px;
-}
-.nav .nav_logo img{
-
-    margin-left: 30px;
     height: 100%;
-    vertical-align: top;
+    background-color: white;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, .2);
 }
-.hamburger{
-    width: 80px;
-    height: 80px;
-    display: none;
-    text-align: center;
-    z-index: 100;
-    cursor: pointer;
+.nav::after{
+    content: '';
+    clear: both;
+    display: table;
 }
-.hamburger > i{
-    font-size: 25px;
-    line-height: 80px;
+.nav .logo{
+    float: left;
+    padding-left: 30px;
 }
 
-/* main */
-.contenedor {
-    background-color: teal;
-    width: 100%;
-    /*overflow: hidden;*/
+.Inicio {
+    bottom: 30px;
+    width: 100px; 
 }
-.contenido-slider{
-    width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+
+.productos {
+    width: 160px; 
 }
-.contenido-slider > img{
-    width: 400px;
+
+.mas{
+    width: 250px;
 }
-.contenido-slider > div{
-    width: 40%;
+.nav ul .productos li{
+    width: 160px; 
 }
-.contenido-slider h2{
-    font-weight: 300;
-    text-align: justify;
-    line-height: 30px;
+.nav ul .mas li{
+    width: 185px;  
 }
-.contenido-slider a{
-    color: white;
-    background: grey;
-    width: 100px;
-    display: block;
-    padding: 15px 0;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 20px;
+.nav-menu{
+    z-index: 10;
+}
+.nav ul{
+    height: 100%;
+    float: right;
+    list-style: none;
+    margin-left: 0px;
+    position: relative;
+}
+.nav ul li{
+    float: left;
+    display: inline-block;
+    margin: 0 10px;
+}
+.nav ul li a{
+    color: black;
     text-decoration: none;
+    line-height: 70px;
+    font-size: 15px;
+    padding: 8px 20px;
+}
+.nav ul li a:hover{
+    color: rgb(0, 236, 236);
+    border-radius: 7px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+}
+.nav ul ul li a{
+    font-size: 15px;
+}
+.nav ul ul li a:hover{
+    color: rgb(24, 223, 223);
+    box-shadow: none;
+}
+.nav ul ul{
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+}
+.nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+    transition: top .3s;
+}
+.nav ul ul li{
+    background-color: white;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    width: 180px;
+    float: none;
+    display: list-item;
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
+}
+.nav ul ul li:hover{
+    background-color: #efefef;
+}
+
+.fa-plus{
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.show, .icon, input{
+    display: none;
+}
+@media all and (max-width: 800px) {
+    .nav ul{
+        display: block;
+        position: absolute;
+        margin-right: 0;
+        top: 0;
+        left: 0;
+        background-color: rgb(100, 100, 100);
+        width: 300px;
+        padding: 30px;
+        opacity: .95;
+        transform: translateX(-300px);
+        transition: transform .5s ease-in-out;
+        z-index: 1;
+    }
+    .nav ul li a{
+        font-size: 17px;
+    }
+    .nav .logo{
+        padding-left: 40px;
+        width: 100%;
+    }
+    .nav ul li, .nav ul ul li{
+        display: block; 
+        width: 100%;
+    }
+    .nav ul ul{
+        top: 10px;
+        position: static;
+        float: none; 
+        display: none;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-10px);
+    }
+    ul.nav-menu{
+        height: 1000px;
+        z-index: 100;
+    }
+    .nav ul ul li{
+        background-color: rgb(100, 100, 100);
+    }
+    .inicio {
+        font-size: 20px;
+        padding-top: 30px;
+    }
+    .nav ul .productos li{
+        width: 200px; 
+    }
+    .nav ul .mas li{
+        width: 200px;  
+    }
+    .nav ul ul li:hover{
+        background-color: rgb(128, 127, 127);
+    }
+    .show{
+        display: block;
+        color: black;
+        font-size: 17px;
+        padding: 0 10px;
+        margin-left: 10px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+    .show:hover{
+        color: cyan;
+    }
+    .icon{
+        display: block;
+        color: black;
+        position: absolute;
+        right: 40px;
+        line-height: 70px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .sub-menu a strong{
+        font-size: 17px;
+    }
+    .nav ul li a:hover{
+        box-shadow: none;
+    }
+    .show + a, ul{
+        display: none;
+    }
+    [id^=btn]:checked + ul{
+        display: block;
+    }
+    .nav ul.rebase{
+        transform: translateX(0px);
+    }
+
+}
+/* ----main---- */
+
+/* ----slider---- */
+
+.home{
+    margin-bottom: 50px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.home .slide{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    display: none;
+    padding: 0 15px;
+    animation: slide 2s ease;
+}
+.home .slide.active{
+    display: flex;
+}
+
+@keyframes slide {
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1) ;
+    }
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.home .container{
+    margin-right: 10px;
+    flex-grow: 1;
+}
+.home .text{
+    width: 50%;
+}
+.home .slide.active .text h1{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1s;
+}
+.home .text h1{
+    font-size: 45px;
+    color: #000000;
+    margin: 0;
+}
+.home .slide.active .text p{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.2s;
+}
+.home .text p{
+    font-size: 18px;
+    color: #222222;
+    margin: 10px 0 30px;
+}
+.home .text a{
+    display:inline-block;
+    padding: 10px 30px;
+    background-color: black;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.home .text a:hover{
+    background-color: #33ffff;
+    color: black;
+}
+.home .slide.active .text a{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.4s;
+}
+@keyframes captionText{
+    0%{
+        opacity: 0; transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1; transform: translateX(0px);
+    }
+}
+
+.home .controls .prev,
+.home .controls .next{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    color:white;
+    background-color:black;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 20px;
+    opacity: .88;
+}
+.home .controls .prev:hover,
+.home .controls .next:hover{
+    background-color: #33ffff;
+}
+.home .controls .prev:hover{
+    transform: translateX(10px);
+}
+.home .controls .next:hover{
+    transform: translateX(-10px);
+}
+.home .controls .prev{
+    left: 0;
+}
+.home .controls .next{
+    right: 0;
+}
+.home .indicator{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+
+.home .indicator div{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+    background-color: black;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    margin: 0 3px;
+}
+.home .indicator div.active{
+    background-color: #33ffff;
+    color: black;
+}
+
+@media (max-width: 767px){
+    .controls{
+        display: none;
+    }
 }
